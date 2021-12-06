@@ -1,0 +1,84 @@
+@import "~@/utils/utils.less";
+
+.requestMethod {
+  display: inline-block;
+  margin-right: 4px;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0);
+  &.GET {
+    background-color: rgba(0, 227, 34, 0.33);
+    color: rgba(0, 181, 20, 1);
+  }
+  &.POST {
+    background-color: rgba(16, 137, 255, 0.2);
+    color: rgba(16, 137, 255, 1);
+  }
+  &.PUT {
+    background-color: rgba(255, 148, 16, 0.45);
+    color: rgba(221, 90, 0, 1);
+  }
+  &.DELETE {
+    background-color: rgba(221, 0, 0, 0.45);
+    color: rgba(221, 0, 0, 1);
+  }
+}
+
+.header {
+  color: rgba(16, 16, 16, 1);
+  font-size: 16px;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.inlineSpace {
+  width: 100%;
+  > div {
+    flex: 1;
+  }
+}
+
+.th {
+  height: 48px;
+  line-height: 48px;
+  background-color: rgba(249, 249, 249, 1);
+  color: rgba(16, 16, 16, 1);
+  font-size: 14px;
+  text-align: center;
+}
+
+.tr {
+  position: relative;
+  .td {
+    padding: 10px;
+    transition: all .3s;
+  }
+  .deleteIcon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all .3s;
+  }
+  &:hover {
+    .td {
+      background: #fafafa;
+    }
+    .deleteIcon {
+      opacity: 1;
+    }
+  }
+}
+
+.updateLogWrapper {
+  .flexCenter;
+}

@@ -1,0 +1,37 @@
+.search {
+  width: 530px;
+  margin: auto;
+}
+
+.menu {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.requestMethod {
+  display: inline-block;
+  margin-right: 6px;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0);
+  &.GET {
+    background-color: rgba(0, 227, 34, 0.33);
+    color: rgba(0, 181, 20, 1);
+  }
+  &.POST {
+    background-color: rgba(16, 137, 255, 0.2);
+    color: rgba(16, 137, 255, 1);
+  }
+  &.PUT {
+    background-color: rgba(255, 148, 16, 0.45);
+    color: rgba(221, 90, 0, 1);
+  }
+  &.DELETE {
+    background-color: rgba(221, 0, 0, 0.45);
+    color: rgba(221, 0, 0, 1);
+  }
+}

@@ -1,0 +1,102 @@
+.textOverflow() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.textOverflowMulti(@line: 3, @bg: #fff) {
+  position: relative;
+  max-height: @line * 1.5em;
+  margin-right: -1em;
+  padding-right: 1em;
+  overflow: hidden;
+  line-height: 1.5em;
+  text-align: justify;
+  &::before {
+    position: absolute;
+    right: 14px;
+    bottom: 0;
+    padding: 0 1px;
+    background: @bg;
+    content: '...';
+  }
+  &::after {
+    position: absolute;
+    right: 14px;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+    content: '';
+  }
+}
+
+// mixins for clearfix
+// ------------------------
+.clearfix() {
+  zoom: 1;
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+  }
+  &::after {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+  }
+}
+
+.beautifulScroll {
+  /* 滚动条 */
+  &::-webkit-scrollbar-thumb:horizontal { /* 水平滚动条的样式 */
+    width: 4px;
+    background-color: #CCC;
+    -webkit-border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: transparent; /* 滚动条的背景颜色 */
+    -webkit-border-radius: 3px; /* 滚动条的圆角宽度 */
+  }
+  &::-webkit-scrollbar {
+    width: 5px; /* 滚动条的宽度 */
+    height: 8px; /* 滚动条的高度 */
+  }
+  &::-webkit-scrollbar-thumb:vertical { /* 垂直滚动条的样式 */
+    width:17px;
+    min-height: 5px;
+    height:5px;
+    background:rgba(70,219,246,0.59);
+    border:1px solid rgba(70,219,246,1);
+    border-radius:3px;
+    -webkit-border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover { /* 滚动条的hover样式 */
+    height: 5px;
+    background:rgba(70,219,246,0.59);
+    -webkit-border-radius: 3px;
+  }
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fitSize(@fit-box) when (@fit-box = true){
+  background-size: 100% 100%;
+}
+
+.bg(@name, @fit-box:true) {
+  background: url("../assets/image/@{name}") no-repeat 0 0;
+  .fitSize(@fit-box);
+}
+
+.horizontalCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
