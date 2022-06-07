@@ -44,6 +44,7 @@ const AddApi = () => {
       .then(values => {
         const data = {
           ...values,
+          projectId,
           apiParams: [...(values.urlParams ?? []), ...(values.queryParams ?? [])],
         };
         // @ts-ignore

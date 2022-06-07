@@ -1,7 +1,7 @@
-import request from '@/utils/request';
+import request, { mock } from '@/utils/request';
 
 export async function _editApi(data: Partial<IApi>) {
-  return request.put(`api-management/apis/${data.apiId}`, { data })
+  return mock.put(`api-management/apis/${data.apiId}`, { data })
 }
 
 export async function _exportApis(apiIds: number[]) {

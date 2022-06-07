@@ -1,7 +1,7 @@
-import request from '@/utils/request';
+import { mock } from '@/utils/request';
 
 export async function _createApi(api: IApi) {
-  return request.post('api-management/apis', {
+  return mock.post('api-management/apis', {
     data: api,
   })
 }

@@ -1,5 +1,5 @@
-import request from '@/utils/request';
+import { mock } from '@/utils/request';
 
 export async function _fetchApiHistory(apiHistoryId: number) {
-  return request<IApiHistory>(`api-management/api-histories/${apiHistoryId}`)
+  return mock<IApiHistory>(`api-management/api-histories/${apiHistoryId}`)
 }

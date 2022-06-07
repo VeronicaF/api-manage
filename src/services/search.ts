@@ -1,4 +1,4 @@
-import request from '@/utils/request';
+import request, { mock } from '@/utils/request';
 
 interface ISearchResult {
   projects: IProject[],
@@ -6,5 +6,5 @@ interface ISearchResult {
 }
 
 export async function _search(paramName: string) {
-  return request<ISearchResult>('api-management/search', { params: { paramName } })
+  return mock<ISearchResult>('api-management/search', { params: { paramName } })
 }
